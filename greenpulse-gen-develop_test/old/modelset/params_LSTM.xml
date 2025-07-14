@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<nanwang>
+    <LSTM>
+        <ratio> 0.8 </ratio>
+        <learning_rate> 0.001 </learning_rate>
+        <epochs> 3000 </epochs>
+        <input_size> 8 </input_size>
+    </LSTM>
+</nanwang>

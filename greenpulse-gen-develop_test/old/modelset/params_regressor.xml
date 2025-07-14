@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<nanwang>
+    <regressor>
+        <iterations> 30000 </iterations>
+        <learning_rate> 0.001 </learning_rate>
+        <ratio> 0.8 </ratio>
+        <depth> 5 </depth>
+        <loss_function> MAE </loss_function>
+        <eval_metric> MAE </eval_metric>
+        <verbose> 100 </verbose>
+        <subsample> 0.9 </subsample>
+        <early_stopping_rounds> 100 </early_stopping_rounds>
+        <colsample_bylevel> 0.7 </colsample_bylevel>
+    </regressor>
+</nanwang>

@@ -1,0 +1,28 @@
+variables:
+  GIT_SUBMODULE_STRATEGY: none # ← 禁用 GitLab 自动处理子模块
+  GIT_DEPTH: 0 # 拉取完整 commit 历史，避免 HEAD 问题
+
+before_script:
+  - |
+    echo "💡 Injecting credentials..."
+    git config url."http://gitlab-ci-token:${CI_JOB_TOKEN}@1.119.169.101:10005/".insteadOf "http://1.119.169.101:10005/"
+  - echo "📦 Fetching submodules manually..."
+  - sed -i "s|http://1.119.169.101:10005/|http://gitlab-ci-token:${CI_JOB_TOKEN}@1.119.169.101:10005/|g" .gitmodules
+  - git submodule sync --recursive
+  - git submodule update --init --recursive
+
+stages:
+  - deploy
+
+workflow:
+  rules:
+    - if: $CI_COMMIT_BRANCH == "develop"
+
+pages:
+  stage: deploy
+  script:
+    - python doc.py
+  artifacts:
+    paths:
+      - doc/html
+  publish: doc/html

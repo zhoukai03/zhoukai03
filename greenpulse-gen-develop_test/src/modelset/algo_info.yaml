@@ -1,0 +1,28 @@
+UST:
+  - cdq_dpm:
+      id: 101
+      timeliness: 4
+  - cdq_dcm:
+      id: 102
+      timeliness: 4
+  - cdq_point_model:
+      id: 103
+      timeliness: 4
+  - cdq_sequence_model:
+      id: 104
+      timeliness: 4
+ST:
+  - baseline:
+      id: 200
+      timeliness: 240
+  - machinelearning:
+      id: 201
+      timeliness: 240
+MT:
+  - baseline:
+      id: 300
+      timeliness: 360
+SS:
+  - baseline:
+      id: 400
+      timeliness: 1080

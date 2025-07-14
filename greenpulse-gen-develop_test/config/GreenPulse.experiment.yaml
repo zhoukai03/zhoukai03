@@ -1,0 +1,81 @@
+init:
+  logLevel: INFO
+  ray: False
+  retry: 3
+  retryInterval: 60
+  runTimeMax: 300
+  messageQueue: True
+  messageQueueTopic: "al_status"
+  messageQueueURL:
+    - "192.168.1.106:30006"
+  database: True
+  databaseURL: "192.168.1.106"
+  databaseName: "postgres"
+  databaseUser: "postgres"
+  databasePassword: "energyhxkj123#@!"
+  databasePort: "32320"
+
+task:
+  taskID: ""
+  taskType: FC # FC/预测 HFC/历史预测（回算） FT/全量训练 UPT/更新训练
+  dateRange:
+    - "2025-04-15 00:00:00" # 起始时间
+    - "2025-04-16 00:00:00" # 结束时间
+  staListType: "single" # "single" or "area"
+  staListFile: "config/staConfig.yaml"
+  timeLiness: [UST, ST, MT, SS] # UST ST MT SS
+  dataset:
+    - "EC_C1D"
+  algorithm: ["baseline:last"] # 该优先级大于站点配置文件中的算法优先级
+  postProcess: ["dynamicOptimization"] # 后处理算法
+  accuracy: ["rmse"] # 精度评估算法
+
+res:
+  cpu: 1
+  cmem: 256
+  gpu: 0
+  gmem: 12
+  node: 1
+
+path:
+  # inPath 为输入文件路径
+  inPath:
+    root:
+      - "/PRESKY/project/FGGLYC/GreenPulse-IO/"
+    meteo:
+      business: "Business/{dataSet}/{dataType}/{date}/{staId}.csv"
+      original: "Original/{dataSet}/{dataType}/{date}/{staId}.csv"
+    obs: ""
+  # outPath 为中间文件输出路径
+  outPath:
+    # 因后端入库需要，该处必须为绝对路径
+    root:
+      - "/mnt/PRESKY/project/EnergyHub/pyout/output"
+    meteo: "{staID}/meteo/{timeliness}/{year:>04d}/{year:>04d}{month:>02d}{day:>02d}{hour:>02d}/{dataSet}.csv"
+    power: "{staID}/power/{timeliness}/{year:>04d}/{year:>04d}{month:>02d}{day:>02d}/{year:>04d}{month:>02d}{day:>02d}{hour:>02d}{minute:>02d}/{algorithm}.{version}.csv"
+    acc: "{staID}/acc/{timeliness}/{year:>04d}/{year:>04d}{month:>02d}{day:>02d}/{year:>04d}{month:>02d}{day:>02d}{hour:>02d}{minute:>02d}/{algorithm}.{version}.csv"
+    log: "{staID}/log/{timeliness}/{year:>04d}{month:>02d}{day:>02d}{hour:>02d}/{algorithm}.{version}.log"
+    model: "{staID}/model/{timeliness}/{algorithm}.{version}/{checkpoint}.pkl"
+    hash: "{staID}/hash/{timeliness}/{algorithm}.{version}/{checkpoint}.hash"
+    key: "{staID}/key/{timeliness}/{algorithm}.{version}/{checkpoint}.key"
+  # deployment 为最终部署文件生成路径
+  deployment:
+    root:
+      - "/mnt/PRESKY/project/EnergyHub/pyout/"
+    deployment104: False
+    # 因后端入库需要，该处必须为绝对路径
+    deployRoot:
+      - "/mnt/PRESKY/project/EnergyHub/pyout/deployment"
+    meteo:
+      PATH: "{staID}/FCST/F_NWP_FARM_WHOLE/{year:>04d}{month:>02d}"
+      FILENAME: "F_NWP_FARM_WHOLE_{duration}H_{yearS:>04d}{monthS:>02d}{dayS:>02d}{hourS:>02d}{minuteS:>02d}_{yearE:>04d}{monthE:>02d}{dayE:>02d}{hourE:>02d}{minuteE:>02d}.csv"
+    power:
+      PATH: "{staID}/FCST/F_{staType}_FARM_WHOLE/{year:>04d}{month:>02d}"
+      FILENAME: "F_{staType}_FARM_WHOLE_{duration}H_{yearS:>04d}{monthS:>02d}{dayS:>02d}{hourS:>02d}{minuteS:>02d}_{yearE:>04d}{monthE:>02d}{dayE:>02d}{hourE:>02d}{minuteE:>02d}.csv"
+    acc:
+      DAY:
+        PATH: "{staID}/FCST/F_{staType}_ACC_SCORE_DAY/{year:>04d}{month:>02d}"
+        FILENAME: "F_{staType}_ACC_SCORE_DAY_{duration}H_{yearS:>04d}{monthS:>02d}{dayS:>02d}_{yearE:>04d}{monthE:>02d}{dayE:>02d}.csv"
+      MONTH:
+        PATH: "{staID}/FCST/F_{staType}_ACC_SCORE_MONTH/{year:>04d}{month:>02d}"
+        FILENAME: "F_{staType}_ACC_SCORE_MONTH_{duration}H_{yearS:>04d}{monthS:>02d}_{yearE:>04d}{monthE:>02d}.csv"

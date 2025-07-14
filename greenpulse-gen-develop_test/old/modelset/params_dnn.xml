@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<nanwang>
+    <LSTM>
+        <ratio> 0.8 </ratio>
+        <batchSize>15</batchSize>
+        <learning_rate> 0.001 </learning_rate>
+        <epochs> 15000 </epochs>
+        <saveStep>100</saveStep>
+        <useGpu>False</useGpu>
+        <summaryPath>Summary</summaryPath>
+        <savePath>Model</savePath>
+    </LSTM>
+</nanwang>

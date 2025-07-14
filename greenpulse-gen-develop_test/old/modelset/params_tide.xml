@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<nanwang>
+     <!--
+        # L: Lookback
+        # H: Horizon
+        # A: the number of attributes
+        # N: the number of series
+        # B: the number os BatchSize
+        # r: the number of covariates for each series
+        # r_hat: temporalWidth in the paper, i.e., \hat{r} << r
+        # p: decoderOutputDim in the paper
+        # hidden_dim: hiddenSize in the paper
+        -->
+    <tide>
+        <ratio>0.8</ratio>
+        <learning_rate>0.3</learning_rate>
+        <epochs>20</epochs>
+        <L>480</L>
+        <H>384</H>
+        <A>286</A>
+        <B>20</B>
+        <r>2431</r>
+        <r_hat>30</r_hat>
+        <p>8</p>
+        <hidden_dim>512</hidden_dim>
+        <encoder_layer_num>1</encoder_layer_num>
+        <decoder_layer_num>1</decoder_layer_num>
+        <featureProjectionHidden>16</featureProjectionHidden>
+        <temporalDecoderHidden>16</temporalDecoderHidden>
+    </tide>
+</nanwang>

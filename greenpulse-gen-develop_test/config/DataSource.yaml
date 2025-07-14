@@ -1,0 +1,158 @@
+IFS:
+  SURF:
+    -
+      basePath: "/mnt/PRESKY/data/MeteData/NAFP/ECMWF/OPEN_HRES/oper_0p25"
+      timePath: '{date.year:04d}/{date.year:04d}{date.month:02d}/{date.month:02d}{date.day:02d}{date.hour:02d}/'
+      timeStart: "2004-02-25T12:00:00Z"
+      timeEnd: "2099-01-01T00:00:00Z"
+      varList: ["t2m", "u100", "v100", "u10", "v10", "ssrd"]
+
+ERA5:
+  SURF:
+    -
+      basePath: "/mnt/PRESKY/data/DATA/ERA5/reanalysis-era5-single-levels"
+      timePath: '{date.year:04d}/{date.year:04d}{date.month:02d}/{date.year:04d}{date.month:02d}{date.day:02d}'
+      timeStart: "2004-01-01T00:00:00Z"
+      timeEnd: "2099-01-01T00:00:00Z"
+      varList: ["t2m", "u100", "v100", "u10", "v10", "ssrd"]
+
+GFS:
+  SURF:
+    -
+      basePath: "/mnt/PRESKY/data/cmadata/NAFP/GFS50"
+      timePath: '{date.year:04d}/{date.year:04d}{date.month:02d}/{date.year:04d}{date.month:02d}{date.day:02d}/{date.hour:02d}'
+      timeStart: "2022-01-01T00:00:00Z"
+      timeEnd: "2099-01-01T00:00:00Z"
+      varList: ["t2m", "u100", "v100", "u10", "v10", "dswrf"]
+
+EC_C1D:
+  SURF:
+    -
+      basePath: "/share/HPC/PRESKY/data/Pretreatment/ECMWF_C1D_SURF/"
+      timePath: '{date.year:04d}/{date.year:04d}{date.month:02d}{date.day:02d}{date.hour:02d}'
+      timeStart: "2017-03-01T00:00:00Z"
+      timeEnd: "2023-12-31T23:00:00Z"
+      varList: ["sp", "tcc", "u100", "v100", "u10", "v10", "win10_spd", "win10_dir", "rhu", "skt", "t2", "d2"]
+    -
+      basePath: "/mnt/PRESKY/data/Pretreatment/ECMWF_C1D_SURF/"
+      timePath: '{date.year:04d}{date.month:02d}{date.day:02d}{date.hour:02d}'
+      timeStart: "2024-01-01T00:00:00Z"
+      timeEnd: "2099-01-01T00:00:00Z"
+      varList: ["sp", "tcc", "u100", "v100", "u10", "v10", "win10_spd", "win10_dir", "rhu", "skt", "t2", "d2", "fg3", "fg6"]
+  UPAR:
+    -
+      basePath: "/share/HPC/PRESKY/data/Pretreatment/ECMWF_C1D_UPAR"
+      timePath: '{date.year:04d}{date.month:02d}{date.day:02d}{date.hour:02d}'
+      timeStart: "2017-03-01T00:00:00Z"
+      timeEnd: "2023-12-31T23:00:00Z"
+      varList: ["d", "gh"]
+    -
+      basePath: "/mnt/PRESKY/data/Pretreatment/ECMWF_C1D_UPAR/"
+      timePath: '{date.year:04d}{date.month:02d}{date.day:02d}{date.hour:02d}'
+      timeStart: "2024-01-01T00:00:00Z"
+      timeEnd: "2099-01-01T00:00:00Z"
+      varList: ["d", "gh", "pv", "q", "r", "t", "u", "v", "w", "win_spd", "win_dir"]
+
+EC_C3E:
+  SURF:
+    -
+      basePath: "/share/HPC/PRESKY/data/Pretreatment/ECMWF_C3E_SURF/"
+      timePath: '{date.year:04d}{date.month:02d}{date.day:02d}{date.hour:02d}'
+      timeStart: "2022-06-01T00:00:00Z"
+      timeEnd: "2024-11-05T00:00:00Z"
+      varList: ["tcc", "u100", "v100", "u10", "v10", "win10_spd", "win10_dir", "rhu", "skt", "t2", "d2"]
+    -
+      basePath: "/mnt/PRESKY/data/MeteData/HX/NAFP/ECMWF_C3E_SURF/"
+      timePath: '{date.year:04d}/{date.year:04d}{date.month:02d}{date.day:02d}{date.hour:02d}'
+      timeStart: "2024-11-01T12:00:00Z"
+      timeEnd: "2099-12-31T23:00:00Z"
+      varList: ["tcc", "u100", "v100", "u10", "v10", "win10_spd", "win10_dir", "rhu", "skt", "t2", "d2"]
+  UPAR:
+    -
+      basePath: "/share/HPC/PRESKY/data/Pretreatment/ECMWF_C3E_UPAR"
+      timePath: '{date.year:04d}{date.month:02d}{date.day:02d}{date.hour:02d}'
+      timeStart: "2022-06-01T00:00:00Z"
+      timeEnd: "2023-12-31T23:00:00Z"
+      varList: ["d", "gh", "pv", "q", "r", "t", "u", "v", "w", "win_spd", "win_dir"]
+
+EC_C6F:
+  SURF:
+    -
+      basePath: "/mnt/PRESKY/data/MeteData/HX/NAFP/ECMWF_C6F_SURF/"
+      timePath: '{date.year:04d}/{date.year:04d}{date.month:02d}/{date.year:04d}{date.month:02d}{date.day:02d}{date.hour:02d}'
+      timeStart: "2022-06-01T00:00:00Z"
+      timeEnd: "2099-12-31T23:00:00Z"
+      varList: ["tcc", "u100", "v100", "u10", "v10", "win10_spd", "win10_dir", "rhu", "skt", "t2", "d2"]
+  UPAR:
+    -
+      basePath: "/mnt/PRESKY/data/MeteData/HX/NAFP/ECMWF_C6F_SURF/"
+      timePath: '{date.year:04d}/{date.year:04d}{date.month:02d}/{date.year:04d}{date.month:02d}{date.day:02d}{date.hour:02d}'
+      timeStart: "2022-06-01T00:00:00Z"
+      timeEnd: "2023-12-31T23:00:00Z"
+      varList: ["d", "gh", "pv", "q", "r", "t", "u", "v", "w", "win_spd", "win_dir"]
+
+#UFS:
+#  SURF:
+#    -
+#      basePath: "/mnt/PRESKY/data/MeteData/HX/NAFP/UFS/CHINA/SURF"
+#      timePath: '{date.year:04d}/{date.year:04d}{date.month:02d}/{date.year:04d}{date.month:02d}{date.day:02d}/{date.year:04d}{date.month:02d}{date.day:02d}{date.hour:02d}'
+#      timeStart: "2024-02-01T00:00:00Z"
+#      timeEnd: "2099-01-01T00:00:00Z"
+#      varList: ["u10", "v10", "tprcp", "sp", "tmpsfc", "t2", "pre_1h", "win_spd", "msl",
+#                "dlwrf_ave", "dlwrf", "ulwrf_ave", "ulwrf", "dswrf_ave", "dswrf", "uswrf_ave", "uswrf", "dswrf_avetoa", "uswrf_avetoa", "ulwrf_avetoa",
+#                "gflux_ave", "gflux", "tcdc_aveclm", "tcdc_avebndcl", "tcdc_avehcl", "tcdc_avelcl", "tcdc_avemcl", "tcdccnvcl",
+#                "pressfc", "ugrd10m", "vgrd10m", "tprcp", "spfh2m", "tmp2m", "tmpsfc",
+#                "sfcr", "snod", "cduvb_ave", "duvb_ave", "csdlf", "csusf", "csusftoa", "csdsf", "csulf", "csulftoa", "sunsd_acc", "vbdsf_ave", "vddsf_ave", "nbdsf_ave", "nddsf_ave"]
+
+FourCastNet:
+  SURF:
+    -
+      basePath: "/mnt/PRESKY/data/Pretreatment/MeteLM/FourCastNet/"
+      timePath: '{date.year:04d}/{date.year:04d}{date.month:02d}/{date.year:04d}{date.month:02d}{date.day:02d}{date.hour:02d}'
+      timeStart: "2024-03-14T00:00:00Z"
+      timeEnd: "2099-01-01T00:00:00Z"
+      varList: ['u10', 'v10', 'u100', 'v100', 't2', 'sp', 'msl', 'tcwv']
+
+FengWu:
+  SURF:
+    -
+      basePath: "/mnt/PRESKY/data/Pretreatment/MeteLM/FengWu/"
+      timePath: '{date.year:04d}/{date.year:04d}{date.month:02d}/{date.year:04d}{date.month:02d}{date.day:02d}{date.hour:02d}'
+      timeStart: "2024-03-14T00:00:00Z"
+      timeEnd: "2099-01-01T00:00:00Z"
+      varList: ["u10", "v10", "msl", "t2"]
+
+FengWu_ERA5:
+  SURF:
+    -
+      basePath: "/mnt/PRESKY/data/Pretreatment/MeteLM/FengWu_ERA5/"
+      timePath: '{date.year:04d}/{date.year:04d}{date.month:02d}/{date.year:04d}{date.month:02d}{date.day:02d}{date.hour:02d}'
+      timeStart: "2022-01-01T00:00:00Z"
+      timeEnd: "2099-01-01T00:00:00Z"
+      varList: ["u10", "v10", "msl", "t2"]
+
+
+GRIST:
+  SURF:
+    -
+      basePath: "/mnt/PRESKY/data/MeteData/HX/NAFP/GRIST/CHINA/SURF"
+      timePath: '{date.year:04d}/{date.year:04d}{date.month:02d}/{date.year:04d}{date.month:02d}{date.day:02d}/{date.year:04d}{date.month:02d}{date.day:02d}{date.hour:02d}'
+      timeStart: "2099-01-01T00:00:00Z"
+      timeEnd: "2099-01-01T00:00:00Z"
+      varList: ["u10", "v10", "win_dir", "t2", "pre_1h", "win_spd", "msl"]
+
+
+SR_EC:
+  SURF:
+    -
+      basePath: "/mnt/PRESKY/data/Pretreatment/DOWNSCALING/EC_SR/"
+      timePath: '{date.year:04d}/{date.year:04d}{date.month:02d}/{date.year:04d}{date.month:02d}{date.day:02d}{date.hour:02d}'
+      timeStart: "2024-09-20T00:00:00Z"
+      timeEnd: "2099-12-31T23:00:00Z"
+      varList: ["t2", "sp", "ssra", "rhu", "mx2t3", "mn2t3", "u10", "v10"]
+    -
+      basePath: "/mnt/PRESKY/data/Pretreatment/DOWNSCALING/EC_SR/"
+      timePath: '{date.year:04d}/{date.year:04d}{date.month:02d}/{date.year:04d}{date.month:02d}{date.day:02d}{date.hour:02d}'
+      timeStart: "2024-01-01T00:00:00Z"
+      timeEnd: "2024-09-19T23:00:00Z"
+      varList: ["t2", "sp", "rhu", "u10", "v10"]

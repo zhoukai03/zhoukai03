@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<nanwang>
+    <transformer>
+        <device>cpu</device>
+        <ratio> 0.8 </ratio>
+        <learning_rate> 0.001 </learning_rate>
+        <epochs> 300 </epochs>
+        <!-- 装机容量 -->
+        <c>200</c>
+        <!-- 输入序列长度 -->
+        <seq_len>384</seq_len>
+        <!-- 输入序列维度 -->
+        <input_size> 8 </input_size>
+        <!-- 输出序列长度，维度默认为 1 -->
+        <output_size>384</output_size>
+        <batch_size>1</batch_size>
+        <!-- 数据集划分步长，根据实际问题改 -->
+        <step_size>96</step_size>
+        <!-- 模型参数 -->
+        <!-- 多头注意力机制的维度 -->
+        <d_model>32</d_model>
+        <!-- 多头注意力机制的头数 -->
+        <nhead>4</nhead>
+        <!-- 前馈神经网络的神经元个数 -->
+        <diff>24</diff>
+        <!-- 编码层数 -->
+        <ed_num_layers>1</ed_num_layers>
+        <!-- 解码层数 -->
+        <de_num_layers> 1 </de_num_layers>
+        <!-- 以下参数一般不改 -->
+        <optimizer>"adam"</optimizer>
+        <weight_decay> 1e-4</weight_decay>
+        <gamma> 0.25</gamma>
+        <shuffle>True</shuffle>
+    </transformer>
+</nanwang>

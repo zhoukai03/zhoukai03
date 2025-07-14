@@ -1,0 +1,24 @@
+[submodule "GreenPulseIO"]
+	path = src/utils/GreenPulseIO
+	url = http://1.119.169.101:10005/GreenPulse/greenpulse-io.git
+	branch = main
+[submodule "UST"]
+	path = src/modelset/UST
+	url = http://1.119.169.101:10005/GreenPulse/modelset/greenpulse-ust/cdq-mini.git
+	branch = main
+[submodule "ST"]
+	path = src/modelset/ST
+	url = http://1.119.169.101:10005/GreenPulse/modelset/greenpulse-st/short_model.git
+	branch = master
+[submodule "MT"]
+	path = src/modelset/MT
+	url = http://1.119.169.101:10005/GreenPulse/modelset/greenpulse-st/short_model.git
+	branch = master
+[submodule "PostST"]
+	path = src/post/ST
+	url = http://1.119.169.101:10005/GreenPulse/modelset/greenpulse-post/st.git
+    branch = master
+[submodule "src/post/calcbase"]
+	path = src/post/calcbase
+	url = http://1.119.169.101:10005/GreenPulse/modelset/greenpulse-post/calcbase.git
+	branch = master

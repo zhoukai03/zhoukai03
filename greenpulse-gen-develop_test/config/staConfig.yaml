@@ -1,0 +1,24 @@
+1309210200000000:
+  staId: "1309210200000000"
+  staType: "GV"
+  staName: "华润分布式光伏"
+  staLon: 117.067
+  staLat: 38.404
+  staAlt: 0.0
+  staCap: 30
+  timeLiness:
+    - "UST"
+    - "ST"
+    - "MT"
+    - "SS"
+  algorithm:
+    - "baseline:last"
+  dataset: 
+    - "EC_C1D"
+    - "EC_C3E"
+  accuracy:
+    - "xibei2019"
+    - "huazhong"
+    - "RMSE"
+  postProcess:
+    - "dynamicOptimization"
